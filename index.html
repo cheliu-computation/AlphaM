@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="VL-Rethinker: Incentivizing Self-Reflection of Vision-Language Models with Reinforcement Learning">
+    <meta property="og:title" content="VL-Rethinker: Incentivizing Self-Reflection of Vision-Language Models with Reinforcement Learning" />
+    <meta property="og:description" content="We propose an approach to incentivize mutlimodal reasoning capabilities" />
+    <meta property="og:url" content="https://github.com/TIGER-AI-Lab/VL-Rethinker/" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>VL-Rethinker: Incentivizing Self-Reflection of Vision-Language Models with Reinforcement Learning</title>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                            VL-Rethinker: Incentivizing Self-Reflection of Vision-Language Models with Reinforcement Learning
+                        </h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://haozheh3.github.io/" style="text-decoration: none; color: inherit;">Haozhe Wang</a>,
+                            </span>
+                            <span class="author-block">
+                                Chao Qu,
+                            </span>
+                            <span class="author-block">
+                                Zuming Huang,
+                            </span>
+                            <span class="author-block">
+                                Wei Chu,
+                            </span>
+                            <span class="author-block">
+                                Fangzhen Lin,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://wenhuchen.github.io/" style="text-decoration: none; color: inherit;">Wenhu Chen</a>,
+                            </span>
+                        </div>
+
+                        
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                HKUST, INF.AI, University of Waterloo
+                            </span>
+                            <br>
+                            <span class="author-block">Corresponding to:</span>
+                            <span class="author-block"><a href="mailto:yiming.jia@mail.utoronto.ca">jasper.whz@outlook.com</a>,</span>
+                            <span class="author-block"><a href="mailto:wenhuchen@uwaterloo.ca">wenhuchen@uwaterloo.ca</a></span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- GitHub link -->
+                                <span class="link-block">
+                                    <a href="https://github.com/TIGER-AI-Lab/VL-Rethinker/" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Code</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/2504.08837" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="ai ai-arxiv"></i>
+                                    </span>
+                                    <span>Paper</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                  <a href="https://huggingface.co/collections/TIGER-Lab/vl-rethinker-67fdc54de07c90e9c6c69d09" target="_blank"
+                                  class="external-link button is-normal is-rounded is-dark">
+                                      <span class="icon">
+                                        🤗
+                                      </span>
+                                      <span>Models</span>
+                                  </a>
+                                </span>
+                                <span class="link-block">
+                                  <a href="https://huggingface.co/datasets/TIGER-Lab/ViRL39K" target="_blank"
+                                  class="external-link button is-normal is-rounded is-dark">
+                                      <span class="icon">
+                                        🤗
+                                      </span>
+                                      <span>ViRL39K</span>
+                                  </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container" style="margin-bottom: 2vh;margin-top: -6vh;">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">🔔News</h2>
+              <div class="content has-text-justified">
+                <p>
+                    <b>🔥[2025-04-21] Our dataset <a href="https://huggingface.co/datasets/TIGER-Lab/ViRL39K">ViRL39K</a> is out 🚀. It includes a comprehensive collection of 39K QAs, including Math/Phys/Chem/Bio problems, charts/diagrams/tables -based reasoning and broader STEM and social science topics. It also provides model-capability annotations.</b>
+                </p>
+              </div>
+              <div class="content has-text-justified">
+                <p>
+                    <b>🔥[2025-04-14] Our paper <a href="https://arxiv.org/abs/2504.08837">VL-Rethinker</a>, <a href="https://github.com/TIGER-AI-Lab/VL-Rethinker/">Code</a>  and <a href="https://huggingface.co/collections/TIGER-Lab/vl-rethinker-67fdc54de07c90e9c6c69d09">Models</a> are out 🚀. </b>
+                </p>
+              </div>
+              <h2 class="title is-3">Introduction</h2>
+              <div class="content has-text-justified">
+                <p>
+                    Recently, slow-thinking systems like GPT-o1 and DeepSeek-R1 have demonstrated great potential in solving challenging problems through explicit reflection. They significantly outperform the best fast-thinking models, such as GPT-4o, on various math and science benchmarks. However, their multimodal reasoning capabilities remain on par with fast-thinking models. For instance, GPT-o1's performance on benchmarks like MathVista, MathVerse, and MathVision is similar to fast-thinking models. <u>In this paper, we aim to enhance the slow-thinking capabilities of vision-language models using reinforcement learning (without relying on distillation) to advance the state of the art. </u>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/ Abstract. -->
+      </div>
+    </section>
+
+    <section class="hero is-light is-small">
+        <div class="hero-body has-text-centered">
+          <h1 class="title is-1 acecoder">
+            <span class="acecoder">VL-Rethinker</span>
+          </h1>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Overview</h2>
+              <div class="content has-text-justified">
+                <p>We identified a critical limitation of GRPO especially for 72B training: <u>the vanishing advantages problem</u>. To mitigate this issue, we introduced a novel technique called <u>Selective Sample Replay (SSR)</u>. While this approach yields strong performance, the resulting RL-trained models exhibit limited self-reflection or self-verification. To further encourage slow-thinking, we introduce <u>Forced Rethinking</u>, which appends a textual rethinking trigger to the end of initial rollouts in RL training, explicitly enforcing a self-reflection reasoning step. 
+                </p>
+                <div class="content has-text-centered">
+                    <img src="static/images/overview.png" alt="algebraic reasoning" width="100%"/>
+                </div>
+                <p>
+                    By combining these two techniques, our model, <u>VL-Rethinker, advances state-of-the-art scores on MathVista, MathVerse, and MathVision</u> to achieve significantly to achieve 80.3\%, 61.8\% and 43.9\% respectively. VL-Rethinker also achieves open-source SoTA on multi-disciplinary benchmarks such as MMMU-Pro, EMMA, and MEGA-Bench, narrowing the gap with GPT-o1. Our empirical results show the effectiveness of our approaches.
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">The Vanishing Advantages Problem</h2>
+              <div class="content has-text-justified">
+                <p>
+                    Our analysis shows the standard GRPO with binary correctness rewards suffers from the vanishing advantages problem, where the amount of zero advantages increase as training progresses. This problem is severe especially for 72B training. As the figure suggests, the percentage of examples exhibiting non-zero advantages steadily declines from approximately 40\% to below 20\% within 256 gradient steps. These observations motivate our approach of <u>Selective Sample Replay</u>.
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/vanishing_adv.png" alt="main" class="center" width="80%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Qualitative Results of VL-Rethinker</h2>
+              <div class="content has-text-justified">
+                <p>
+                    We train <u>VL-Rethinker</u> with <u>SSR</u> and <u>Forced Rethinking</u>, to empower the ability of deliberate thinking. Intriguingly, as illustrated in figure, VL-Rethinker even identify flaws in the given problem when checking its initial reasoning through rethinking, showcasing a form of emergent metacognitive ability.
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/rethinking.png" alt="RL results" class="center" width="80%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Performance of VL-Rethinker</h2>
+              <div class="content has-text-justified">
+                <p>
+                    VL-Rethinker advances state-of-the-art scores on MathVista, MathVerse, and MathVision. It also achieves open-source SoTA on multi-disciplinary benchmarks such as MMMU-Pro, EMMA, and MEGA-Bench, narrowing the gap with GPT-o1. 
+                    We remain active in further pushing the limits of VL-Rethinker. 
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/main_results.png" alt="RL results" class="center" width="80%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Explore More</h2>
+              <div class="content has-text-justified">
+                <p>
+                    Explore more about details of our approach, analysis of learned rethinking behaviors, and insights in VLM training within <a href="https://arxiv.org/abs/2504.08837">our paper</a>!
+                </p>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Comparison with existing RM</h2>
+              <div class="content has-text-justified">
+                <p>
+                  Existing top-ranked reward models on Reward Bench can perform pretty bad for best-of-N sampling in the coding scenarion, and sometime can underperform the greedy results. However, our AceCodeRM-7B consistently outperform them with an average of <b>6.9</b> improvement 
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/ac_table4.png" alt="Comparion with other RM" class="center" width="80%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Test case filtering matters</h2>
+              <div class="content has-text-justified">
+                <p>
+                  We also conduct experiments to investigate how filtering the test cases with a proxy model can affect the results. As shown in table, training RM on data after the filtering improve the performance significantly, especially for those hard code questions like MBPP-Plus and BigCodeBench-Hard (C/I). We believe this is because the test case filtering can ensure the remaining ones are consistent with each other and thus point to the same implicit program, which improves the quality of the rewards. 
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/ac_table5.png" alt="Test case filtering matters" class="center" width="80%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div> --> 
+
+          <!-- <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">RM backbone matters</h2>
+              <div class="content has-text-justified">
+                <p>
+                  We show that Qwen2.5-Coder is a better backbone for the reward model compared to Llama-3.1-8B. This is because the Qwen2.5-Coder models have been pre-trained on way more code-related data compared to the Llama-3.1 models, and thus more knowledgeable when tuning it into a reward model.
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/ac_table6.png" alt="RM Backbone Matters" class="center" width="80%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </section>
+
+	<!-- BibTeX citation -->
+	<section class="section" id="BibTeX">
+	    <div class="container is-max-desktop content">
+	        <h2 class="title">Reference</h2>
+	        If you find our work useful, please give us a free cite:
+	        <pre><code>
+			@article{vl-rethinker,
+			      title={VL-Rethinker: Incentivizing Self-Reflection of Vision-Language Models with Reinforcement Learning},
+			      author = {Wang, Haozhe and Qu, Chao and Huang, Zuming and Chu, Wei and Lin, Fangzhen and Chen, Wenhu},
+			      journal={arXiv preprint arXiv:2504.08837},
+			      year={2025}
+			}
+	        </code></pre>
+	    </div>
+	</section>
+
+	<footer class="footer">
+	    <div class="container">
+	        <div class="columns is-centered">
+	            <div class="column is-8">
+	                <div class="content has-text-centered">
+	                    <p>
+	                        This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</footer>
+
+</body>
+</html>
