@@ -126,7 +126,7 @@
               <h2 class="title is-3">Introduction</h2>
               <div class="content has-text-justified">
                 <p>
-                    Recently, slow-thinking systems like GPT-o1 and DeepSeek-R1 have demonstrated great potential in solving challenging problems through explicit reflection. They significantly outperform the best fast-thinking models, such as GPT-4o, on various math and science benchmarks. However, their multimodal reasoning capabilities remain on par with fast-thinking models. For instance, GPT-o1's performance on benchmarks like MathVista, MathVerse, and MathVision is similar to fast-thinking models. <u>In this paper, we aim to enhance the slow-thinking capabilities of vision-language models using reinforcement learning (without relying on distillation) to advance the state of the art. </u>
+                    intro </u>
                 </p>
               </div>
             </div>
@@ -138,7 +138,7 @@
     <section class="hero is-light is-small">
         <div class="hero-body has-text-centered">
           <h1 class="title is-1 acecoder">
-            <span class="acecoder">VL-Rethinker</span>
+            <span class="acecoder">AlphaMed</span>
           </h1>
         </div>
     </section>
@@ -149,13 +149,13 @@
             <div class="column is-four-fifths">
               <h2 class="title is-3">Overview</h2>
               <div class="content has-text-justified">
-                <p>We identified a critical limitation of GRPO especially for 72B training: <u>the vanishing advantages problem</u>. To mitigate this issue, we introduced a novel technique called <u>Selective Sample Replay (SSR)</u>. While this approach yields strong performance, the resulting RL-trained models exhibit limited self-reflection or self-verification. To further encourage slow-thinking, we introduce <u>Forced Rethinking</u>, which appends a textual rethinking trigger to the end of initial rollouts in RL training, explicitly enforcing a self-reflection reasoning step. 
+                <p> overview1
                 </p>
                 <div class="content has-text-centered">
                     <img src="static/images/overview.png" alt="algebraic reasoning" width="100%"/>
                 </div>
                 <p>
-                    By combining these two techniques, our model, <u>VL-Rethinker, advances state-of-the-art scores on MathVista, MathVerse, and MathVision</u> to achieve significantly to achieve 80.3\%, 61.8\% and 43.9\% respectively. VL-Rethinker also achieves open-source SoTA on multi-disciplinary benchmarks such as MMMU-Pro, EMMA, and MEGA-Bench, narrowing the gap with GPT-o1. Our empirical results show the effectiveness of our approaches.
+                    overview2
                 </p>
               </div>
             </div>
@@ -163,10 +163,43 @@
   
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-              <h2 class="title is-3">The Vanishing Advantages Problem</h2>
+              <h2 class="title is-3">RQ1</h2>
               <div class="content has-text-justified">
                 <p>
-                    Our analysis shows the standard GRPO with binary correctness rewards suffers from the vanishing advantages problem, where the amount of zero advantages increase as training progresses. This problem is severe especially for 72B training. As the figure suggests, the percentage of examples exhibiting non-zero advantages steadily declines from approximately 40\% to below 20\% within 256 gradient steps. These observations motivate our approach of <u>Selective Sample Replay</u>.
+                    rq1
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/vanishing_adv.png" alt="main" class="center" width="80%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">RQ2</h2>
+              <div class="content has-text-justified">
+                <p>
+                    rq2
+                </p>
+                <div class="box m-5">
+                    <div class="content has-text-centered">
+                      <img src="static/images/vanishing_adv.png" alt="main" class="center" width="80%"/>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">RQ3</h2>
+              <div class="content has-text-justified">
+                <p>
+                    rq3
                 </p>
                 <div class="box m-5">
                     <div class="content has-text-centered">
@@ -180,43 +213,10 @@
 
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-              <h2 class="title is-3">Qualitative Results of VL-Rethinker</h2>
-              <div class="content has-text-justified">
-                <p>
-                    We train <u>VL-Rethinker</u> with <u>SSR</u> and <u>Forced Rethinking</u>, to empower the ability of deliberate thinking. Intriguingly, as illustrated in figure, VL-Rethinker even identify flaws in the given problem when checking its initial reasoning through rethinking, showcasing a form of emergent metacognitive ability.
-                </p>
-                <div class="box m-5">
-                    <div class="content has-text-centered">
-                      <img src="static/images/rethinking.png" alt="RL results" class="center" width="80%"/>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Performance of VL-Rethinker</h2>
-              <div class="content has-text-justified">
-                <p>
-                    VL-Rethinker advances state-of-the-art scores on MathVista, MathVerse, and MathVision. It also achieves open-source SoTA on multi-disciplinary benchmarks such as MMMU-Pro, EMMA, and MEGA-Bench, narrowing the gap with GPT-o1. 
-                    We remain active in further pushing the limits of VL-Rethinker. 
-                </p>
-                <div class="box m-5">
-                    <div class="content has-text-centered">
-                      <img src="static/images/main_results.png" alt="RL results" class="center" width="80%"/>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
               <h2 class="title is-3">Explore More</h2>
               <div class="content has-text-justified">
                 <p>
-                    Explore more about details of our approach, analysis of learned rethinking behaviors, and insights in VLM training within <a href="https://arxiv.org/abs/2504.08837">our paper</a>!
+                    Explore more about details of our approach, analysis of learned rethinking behaviors, and insights in medical LLM training within <a href="https://github.com/cheliu-computation/Med-R1-Alpha">our paper</a>!
                 </p>
                 
               </div>
@@ -280,7 +280,7 @@
 	        <h2 class="title">Reference</h2>
 	        If you find our work useful, please give us a free cite:
 	        <pre><code>
-			@article{vl-rethinker,
+			@article{alhamed,
 			      title={Beyond Distillation: Pushing the Limits of Medical LLM Reasoning with Minimalist Rule-Based RL},
 			      author = {Che, Liu and Wang, Haozhe and Jiazhen, Pan and Zhongwei, Wan and Yong, Dai and Fangzhen, Lin and Wenjia, Bai and Daniel, Rueckert and Rossella Arcucci},
 			      journal={arXiv preprint arXiv:},
